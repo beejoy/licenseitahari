@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Website to check smart card license"
+    />
+    <title>TMSO Dhankuta License Check</title>
+  </head>
+  <body class="bg-sky-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      if ("serviceworker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./public/serviceworker.js")
+            .then((reg) => console.log("Success: ", reg.scope))
+            .catch((err) => console.log("Failure: ", err));
+        });
+      }
+    </script>
+  </body>
+</html>
