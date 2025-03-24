@@ -19,11 +19,6 @@ const MemberCard = ({ data }) => {
           Category: {data.CATEGORYTYPE}
         </span>
       </p>
-      <p>
-        <span>
-          D Date.: <span className="font-bold">{data.DDATE}</span>
-        </span>
-      </p>
     </div>
   );
 };
